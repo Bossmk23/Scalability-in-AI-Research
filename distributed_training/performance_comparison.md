@@ -1,4 +1,28 @@
+# Performance Comparison: Single-GPU vs Multi-GPU (DDP) Training
 
+## Introduction
+In deep learning, the scalability of training workflows is a crucial factor when working with large datasets and complex models. To evaluate scalability, we conducted experiments using both **single-GPU training** and **multi-GPU Distributed Data Parallel (DDP) training**. This report compares the two approaches in terms of setup, execution, and performance outcomes.
+
+---
+
+## 1. Single-GPU Training
+
+### Codebase
+The `single_gpu_example.py` script trains a simple neural network on the MNIST dataset using only one GPU.  
+Key features:
+- Uses **PyTorch** with a standard training loop.
+- Runs entirely on a single device (GPU if available, otherwise CPU).
+- Straightforward setup with minimal overhead.
+
+### Sample Output
+```
+Using device: cpu
+Train Epoch: 1 [0/60000] Loss: 2.303463
+Train Epoch: 1 [6400/60000] Loss: 0.208762
+...
+Train Epoch: 2 [57600/60000] Loss: 0.177160
+Training completed in: 414.96 seconds
+```
 **Observation:**  
 Training completed in ~415 seconds on CPU (single-device). The loss values decreased steadily, showing effective learning.
 
