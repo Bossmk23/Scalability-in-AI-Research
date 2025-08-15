@@ -1,0 +1,2 @@
+Peak GPU Memory: 0.273 GB
+Top Ops: aten::conv2d, volta_sgemm_128x64_nn, batch_norm, relu_
